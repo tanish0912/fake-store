@@ -1,8 +1,7 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -45,16 +44,20 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  width: 100%;
 }
 
 main {
   flex: 1;
+  width: 100%;
+  padding-top: 70px; /* Add space for fixed navbar */
 }
 
 .footer {
-  background-color: var(--secondary-color);
+  background: var(--gradient-secondary);
   color: var(--text-light);
   padding: 1.5rem 0;
   text-align: center;
-  margin-top: 2rem;
+  width: 100%;
+  backdrop-filter: blur(10px);
 }

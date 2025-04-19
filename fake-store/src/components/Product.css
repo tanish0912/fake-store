@@ -1,9 +1,6 @@
 .product-card {
-  background: var(--glass-background);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  background-color: white;
   border-radius: var(--border-radius);
-  border: var(--glass-border);
   box-shadow: var(--box-shadow);
   overflow: hidden;
   transition: var(--transition);
@@ -14,18 +11,8 @@
 }
 
 .product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-.product-card:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background: var(--gradient-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -34,46 +21,59 @@
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
+  background-color: white;
   position: relative;
-  overflow: hidden;
-}
-
-.product-image:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
-  z-index: 1;
 }
 
 .product-image img {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
-  transition: transform 0.5s ease;
-  z-index: 2;
+  transition: transform 0.3s ease;
 }
 
 .product-card:hover .product-image img {
   transform: scale(1.05);
 }
 
+.wishlist-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: var(--gray-400);
+  transition: var(--transition);
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.wishlist-btn.active {
+  color: var(--accent-color);
+}
+
 .product-info {
-  padding: 1.5rem;
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   flex: 1;
-  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid var(--gray-100);
 }
 
 .product-title {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   margin: 0;
   display: -webkit-box;
@@ -85,14 +85,14 @@
 }
 
 .product-category {
-  color: #666;
-  font-size: 0.9rem;
+  color: var(--gray-500);
+  font-size: 0.85rem;
   text-transform: capitalize;
   margin: 0;
-  background: rgba(0, 0, 0, 0.05);
   display: inline-block;
   padding: 4px 10px;
-  border-radius: 20px;
+  background-color: var(--gray-100);
+  border-radius: 16px;
   font-weight: 500;
 }
 
@@ -102,53 +102,44 @@
   align-items: center;
   margin-top: auto;
   margin-bottom: 0.8rem;
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .product-price {
   font-weight: 700;
-  font-size: 1.3rem;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-size: 1.2rem;
+  color: var(--primary-color);
 }
 
 .product-rating {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.9rem;
-  background: rgba(0, 0, 0, 0.05);
-  padding: 4px 10px;
-  border-radius: 20px;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--gray-600);
 }
 
 .rating-star {
-  color: gold;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  color: #FFB800;
 }
 
 .rating-count {
-  color: #666;
+  color: var(--gray-500);
   font-size: 0.75rem;
-  font-weight: 500;
 }
 
 .product-add-btn {
   width: 100%;
-  margin-top: auto;
-  background: var(--gradient-primary);
-  border-radius: 25px;
-  padding: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+  color: white;
   border: none;
+  border-radius: var(--border-radius);
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .product-add-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.2);
+  background-color: #2954d8;
 } 

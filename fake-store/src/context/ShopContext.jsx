@@ -11,10 +11,21 @@ export const ShopContextProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : {};
   });
   
+  const [wishlist, setWishlist] = useState(() => {
+    // Initialize wishlist from localStorage
+    const savedWishlist = localStorage.getItem('wishlist');
+    return savedWishlist ? JSON.parse(savedWishlist) : [];
+  });
+  
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
+  
+  // Save wishlist to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  }, [wishlist]);
   
   // Fetch products from API
   useEffect(() => {
@@ -65,6 +76,36 @@ export const ShopContextProvider = ({ children }) => {
     return cart[productId] || 0;
   };
   
+  // Add to wishlist
+  const addToWishlist = (productId) => {
+    setWishlist(prev => {
+      if (!prev.includes(productId)) {
+        return [...prev, productId];
+      }
+      return prev;
+    });
+  };
+  
+  // Remove from wishlist
+  const removeFromWishlist = (productId) => {
+    setWishlist(prev => prev.filter(id => id !== productId));
+  };
+  
+  // Check if an item is in wishlist
+  const isInWishlist = (productId) => {
+    return wishlist.includes(productId);
+  };
+  
+  // Get wishlist items
+  const getWishlistItems = () => {
+    return products.filter(product => wishlist.includes(product.id));
+  };
+  
+  // Get total wishlist count
+  const getWishlistCount = () => {
+    return wishlist.length;
+  };
+  
   // Get cart total
   const getCartTotal = () => {
     let total = 0;
@@ -93,12 +134,18 @@ export const ShopContextProvider = ({ children }) => {
     products,
     loading,
     cart,
+    wishlist,
     addToCart,
     removeFromCart,
     clearCart,
     getCartItemCount,
     getCartTotal,
-    getCartItems
+    getCartItems,
+    addToWishlist,
+    removeFromWishlist,
+    isInWishlist,
+    getWishlistItems,
+    getWishlistCount
   };
   
   return (

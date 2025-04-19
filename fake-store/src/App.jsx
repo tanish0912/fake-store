@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
+import Wishlist from './components/Wishlist';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/shop" element={<Shop />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/wishlist" element={<Wishlist />} />
             </Routes>
           </main>
           <footer className="footer">

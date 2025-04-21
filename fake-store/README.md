@@ -1,6 +1,6 @@
 # FakeStore - Online Shopping Website
 
-FakeStore is a simple online shopping website where you can browse products, add them to your cart, and save items to your wishlist.
+FakeStore is a modern online shopping website built with React that offers a seamless browsing experience. Users can explore products, add them to their cart, and save items to their wishlist, all with a clean and responsive interface.
 
 ## What You Can Do
 
@@ -20,6 +20,7 @@ FakeStore is a simple online shopping website where you can browse products, add
 - Wishlist functionality to save favorite items
 - Shopping cart to keep track of items you want to buy
 - Search and filter to find products easily
+- Fast performance with React + Vite
 
 ## How to Run the Project Locally
 
@@ -58,11 +59,12 @@ FakeStore is a simple online shopping website where you can browse products, add
 
 ## Technologies Used
 
-- React
-- React Router
-- Vite
-- CSS
-- Fake Store API
+- React 
+- React Router for navigation
+- Vite for fast development
+- Custom CSS for styling
+- Context API for state management
+- Fake Store API for product data
 
 ## Screenshots
 
@@ -71,7 +73,7 @@ FakeStore is a simple online shopping website where you can browse products, add
 ## Deployment
 
 The website is deployed using Vercel and can be accessed at:
-[Add your live website URL here]
+https://fake-store-zeta.vercel.app/
 
 ---
 
